@@ -200,7 +200,6 @@
     <div class="success-msg show">{{ session('success') }}</div>
 @endif
 
-<!-- Основные данные -->
 <form method="POST" action="/profile/update">
     @csrf
     <div class="form-group">
@@ -216,10 +215,9 @@
     <button type="submit" class="btn-save">💾 Сохранить изменения</button>
 </form>
 
-<!-- Кнопка смены пароля -->
 <button class="btn-change-password" onclick="togglePasswordForm()">🔑 Сменить пароль</button>
 
-<!-- Форма смены пароля -->
+
 <div class="password-section" id="passwordSection">
     <div class="section-title">🔑 Смена пароля</div>
     <form method="POST" action="/profile/password">

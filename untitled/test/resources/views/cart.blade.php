@@ -285,8 +285,6 @@
             removeItem(productId);
             return;
         }
-
-        // Отправляем запрос на обновление
         fetch('/update-cart', {
             method: 'POST',
             headers: {
@@ -339,7 +337,6 @@
     function pay() {
         if (confirm('💳 Подтвердите оплату заказа?')) {
             alert('✅ Спасибо за покупку! Ваш заказ оформлен.');
-            // Очищаем корзину
             fetch('/clear-cart', {
                 method: 'POST',
                 headers: {

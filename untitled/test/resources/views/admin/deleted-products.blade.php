@@ -180,7 +180,6 @@
     </style>
 </head>
 <body>
-    <!-- Уведомление -->
     <div class="notification" id="notification">✅ Успешно!</div>
 
     <div class="container">
@@ -232,9 +231,6 @@
             }, 2000);
         }
 
-        // ============================
-        // ВОССТАНОВЛЕНИЕ ТОВАРА
-        // ============================
         function restoreProduct(productId) {
             if (!confirm('↩ Восстановить этот товар?')) {
                 return;
@@ -257,7 +253,6 @@
                 .then(data => {
                     if (data.success) {
                         showNotification('✅ ' + data.message);
-                        // Удаляем карточку товара или перезагружаем страницу
                         setTimeout(() => {
                             location.reload();
                         }, 1000);

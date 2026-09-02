@@ -259,12 +259,10 @@
     </style>
 </head>
 <body>
-<!-- Корзина -->
 <a href="/cart" class="cart-icon">
     🛒 Корзина <span class="cart-count">{{ $cartCount ?? 0 }}</span>
 </a>
 
-<!-- Уведомление -->
 <div class="notification" id="notification">✅ Товар добавлен в корзину!</div>
 
 <div class="container">
@@ -338,9 +336,7 @@
         }, 2000);
     }
 
-    // ============================
-    // ДОБАВЛЕНИЕ В КОРЗИНУ
-    // ============================
+
     const buttons = document.querySelectorAll('.btn-add-cart');
     const cartCountElement = document.querySelector('.cart-count');
 
@@ -386,9 +382,6 @@
         });
     });
 
-    // ============================
-    // УДАЛЕНИЕ ТОВАРА (для admin)
-    // ============================
     function deleteProduct(productId) {
         if (!confirm('🗑 Вы уверены, что хотите удалить этот товар?')) {
             return;
@@ -411,7 +404,6 @@
             .then(data => {
                 if (data.success) {
                     showNotification('✅ ' + data.message);
-                    // Перезагружаем страницу через 1 секунду
                     setTimeout(() => location.reload(), 1000);
                 } else {
                     showNotification('❌ ' + data.error, true);
@@ -427,9 +419,6 @@
             });
     }
 
-    // ============================
-    // ВОССТАНОВЛЕНИЕ ТОВАРА (для admin)
-    // ============================
     function restoreProduct(productId) {
         if (!confirm('↩ Восстановить этот товар?')) {
             return;
